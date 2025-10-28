@@ -1,0 +1,62 @@
+{
+  "name": "aws-cost-optimizer-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for AWS cost optimization and analysis",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "aws-cost-optimizer-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "postbuild": "node -e \"require('fs').chmodSync('dist/index.js', '755')\"",
+    "start": "node dist/index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix"
+  },
+  "keywords": [
+    "mcp",
+    "aws",
+    "cost-optimization",
+    "cloud",
+    "devops",
+    "finops",
+    "aws-sdk",
+    "typescript"
+  ],
+  "author": "Tu Nombre <tuemail@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/j-o-devsigner/aws-cost-optimizer-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/j-o-devsigner/aws-cost-optimizer-mcp/issues"
+  },
+  "homepage": "https://github.com/j-o-devsigner/aws-cost-optimizer-mcp#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@aws-sdk/client-cloudwatch": "^3.675.0",
+    "@aws-sdk/client-compute-optimizer": "^3.675.0",
+    "@aws-sdk/client-cost-explorer": "^3.675.0",
+    "@aws-sdk/client-ec2": "^3.675.0",
+    "@aws-sdk/client-rds": "^3.675.0",
+    "zod": "^3.23.8",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
+    "eslint": "^9.11.1",
+    "jest": "^29.7.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
